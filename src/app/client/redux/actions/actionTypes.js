@@ -1,2 +1,5 @@
-export const FETCH_COMICS = 'FETCH_COMICS';
+export const REQUEST_COMICS = 'REQUEST_COMICS';
+export const REQUEST_COMIC = 'REQUEST_COMIC';
 export const RECEIVE_COMICS='RECEIVE_COMICS';
+export const RECEIVE_COMIC='RECEIVE_COMIC';
+export const RESET_COMIC = 'RESET_COMIC';

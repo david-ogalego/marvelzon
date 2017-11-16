@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchComics } from '../../redux/actions';
+import { fetchComics, resetComic } from '../../redux/actions';
 import { ComicList } from '../../components';
 
 class CatalogList extends Component {
     componentDidMount() {
         const { dispatch } = this.props;
+        dispatch(resetComic());
         dispatch(fetchComics());
     }
     render() {
         const { 
-            comicsList 
+            comicsList,
+            loadingCatalog
         } = this.props;
 
         return (
+            loadingCatalog ? 'Loading' : 
             <ComicList comicsList={comicsList} />
         );
     }
@@ -23,6 +26,7 @@ class CatalogList extends Component {
 const mapStateToProps = state => {
     return {
         comicsList: state.catalogReducer.comics,
+        loadingCatalog: state.catalogReducer.loadingCatalog,
     };
   };
   

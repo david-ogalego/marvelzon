@@ -17,7 +17,7 @@ class App extends Component {
 							<Catalog />
 						}>
 						</Route>
-						<Route path='/detail/:comicId' component={ComicDetail} ></Route>
+						<Route path='/detail/:comicId' component={ComicDetail}></Route>
 					</Switch>
 				</BrowserRouter>
 			</Provider>
