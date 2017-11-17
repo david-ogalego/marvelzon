@@ -2,5 +2,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    display: -ms-flexbox;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
     margin: 25px;
 }
