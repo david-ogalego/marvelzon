@@ -3,13 +3,14 @@ import {Provider} from 'react-redux';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import { Catalog, ComicDetail } from './containers/';
 import configureStore from './redux/store/configureStore';
+import stylesApp from './App.css';
 
 const store = configureStore();
 
 class App extends Component {
   render() {
     return (
-		<div className="App">
+		<div className={stylesApp.app}>
 			<Provider store={store} >
 				<BrowserRouter>
 					<Switch>

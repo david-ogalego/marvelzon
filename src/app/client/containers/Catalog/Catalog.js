@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchComics, resetComic } from '../../redux/actions';
 import { ComicList } from '../../components';
+import catalogStyles from './Catalog.css';
 
 class CatalogList extends Component {
     componentDidMount() {
@@ -17,7 +18,8 @@ class CatalogList extends Component {
         } = this.props;
 
         return (
-            loadingCatalog ? 'Loading' : 
+            loadingCatalog ?
+            <div className={catalogStyles.spinner}></div> :
             <ComicList comicsList={comicsList} />
         );
     }
