@@ -6,21 +6,46 @@
     height: 149px;
     width: 216px;
     position: relative;
-    padding-top: 133px;
-    margin-bottom: 120px;
+    margin-bottom: 250px;
 }
 
-.details {
+.containerDetails {
+    background-color: #423838;
+    color: white;
+    padding: 20px 10px 70px 10px;
     position: absolute;
     top: 0;
+    width: 196px;
     z-index: -1;
 }
 
+.detail {
+    text-align: center;
+}
+
+.titleDetail {
+    max-height: 54px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .image {
-    margin-top: -120px;
+    animation: jump 2s;
 }
 
 .image:hover {
     transform: translateY(120px);
     transition: 1s ease-in-out;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(120px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }

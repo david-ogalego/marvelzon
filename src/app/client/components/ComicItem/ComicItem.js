@@ -4,15 +4,15 @@ import stylesComicItem from './ComicItem.css';
 import moment from 'moment';
 
 const ComicItem = function(props) {
-    const dateComic = moment(props.date).format("YYYY-MM-DD HH:mm:ss");
+    const dateComic = moment(props.date).format("YYYY-MM-DD");
     return (
         <Link className={stylesComicItem.item} key={props.videoId} to={`/detail/${props.id}`} >
             <div className={stylesComicItem.containerImage} >
                 <img className={stylesComicItem.image} alt={props.title} src={props.image} /> 
-                <div className={stylesComicItem.details}>
-                    <h3>{props.title}</h3>
-                    Date: <label>{dateComic}</label>
-                    Price: <label>{props.price}</label>
+                <div className={stylesComicItem.containerDetails}>
+                    <div className={`${stylesComicItem.detail} ${stylesComicItem.titleDetail}`}>{props.title}</div>
+                    <div className={stylesComicItem.detail}>Date: {dateComic}</div>
+                    <div className={stylesComicItem.detail}>Price: {props.price}</div>
                 </div>
             </div>
         </Link>
