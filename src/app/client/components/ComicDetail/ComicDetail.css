@@ -25,5 +25,6 @@
     }
     .imageContainer img {
         max-width: 400px;
+        min-height: 607px;
     }
 }
