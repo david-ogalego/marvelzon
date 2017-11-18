@@ -1,5 +1,4 @@
 .containerComicDetail {
-    float: left;
     margin: 50px 30px 20px 30px;
 }
 
@@ -18,13 +17,19 @@
     padding-left: 10px;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 640px) {
+    .containerComicDetail {
+        width: 274px;
+    }
     .containerBasicDetail {
         flex-direction: column;
         max-width: 400px;
     }
+    .imageContainer {
+        min-width: 274px;
+    }
     .imageContainer img {
-        max-width: 400px;
+        max-width: 274px;
         min-height: 607px;
     }
 }

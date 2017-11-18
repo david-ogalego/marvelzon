@@ -54,9 +54,14 @@
     }
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 640px) {
     .item {
         margin: 0 auto;
         padding-top: 50px;
+    }
+    .containerImage:hover .image,
+    .containerImage:focus .image {
+        transform: translateY(0px);
+        transition: 1s ease-in-out;
     }
 }
