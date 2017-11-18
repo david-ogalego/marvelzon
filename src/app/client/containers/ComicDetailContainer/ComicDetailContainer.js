@@ -10,6 +10,7 @@ import {
     getCreatorsFromComic,
     getCharactersFromComic
 } from '../../helpers/comic';
+import styleComicDetail from './ComicDetailContainer.css';
 
 class Comic extends Component {
     componentDidMount() {
@@ -27,7 +28,8 @@ class Comic extends Component {
         const hasCharacters = characters.length;
 
         return (
-            loadingComic ? 'Loading comic' :
+            loadingComic ? 
+            <div className={styleComicDetail.spinner}></div> :
             <div>
                 {comic && <ComicDetail
                     title={comic.title}
