@@ -23,7 +23,9 @@ class Comic extends Component {
     render() {
         const {
             comic,
-            loadingComic
+            loadingComic,
+            hasErrorLoadingComic,
+            errorStatus
         } = this.props;
         const creators = getCreatorsFromComic(comic);
         const hasCreators = !!creators.length;
@@ -33,6 +35,10 @@ class Comic extends Component {
         return (
             loadingComic ? 
             <div className={styleComicDetail.spinner}></div> :
+            hasErrorLoadingComic ? 
+            <div className={styleComicDetail.container}>
+                <label className={styleComicDetail.containerError}>{errorStatus}</label>
+            </div> :
             <div className={styleComicDetail.container}>
                 <div className={styleComicDetail.containerDetail}>
                     {comic && <ComicDetail
@@ -57,7 +63,9 @@ class Comic extends Component {
 const mapStateToProps = state => {
     return {
         comic: state.comicReducer.comic,
-        loadingComic: state.comicReducer.loadingComic
+        loadingComic: state.comicReducer.loadingComic,
+        hasErrorLoadingComic: state.comicReducer.hasErrorLoadingComic,
+        errorStatus: state.comicReducer.errorStatus
     };
   };
   

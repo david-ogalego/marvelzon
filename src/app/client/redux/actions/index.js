@@ -3,7 +3,8 @@ import {
     RECEIVE_COMIC,
     REQUEST_COMICS,
     REQUEST_COMIC,
-    RESET_COMIC
+    RESET_COMIC,
+    ERROR_REQUEST_COMIC
 } from './actionTypes';
 
 export const fetchComics = (limitComics) => {
@@ -11,9 +12,14 @@ export const fetchComics = (limitComics) => {
         dispatch(requestComics(limitComics));
         return fetch(`https://gateway.marvel.com:443/v1/public/comics?format=comic&offset=0&limit=${limitComics}&orderBy=-onsaleDate&apikey=d86beaee5f52cf5b1205630a7e35b24b`)
             .then(response => response.json())
-            .then(json => dispatch(receiveComics(json.data.results)))
+            .then(json => {
+                if (json.code === 200) {
+                    return dispatch(receiveComics(json.data.results))
+                }
+                throw json.status;
+            })
             .catch(function(error) {
-                console.log('There has been a problem with your fetch operation: ' + error.message);
+                console.log('There has been a problem with your fetch operation: ' + error);
             });
     };
 };
@@ -45,9 +51,14 @@ export const fetchComic = (id) => {
         dispatch(requestComic);
         return fetch(`https://gateway.marvel.com:443/v1/public/comics/${id}?apikey=d86beaee5f52cf5b1205630a7e35b24b`)
             .then(response => response.json())
-            .then(json => dispatch(receiveComic(json.data.results)))
+            .then(json => { if (json.code === 200) {
+                return dispatch(receiveComic(json.data.results));
+            }
+            throw json.status;
+            })
             .catch(function(error) {
-                console.log('There has been a problem with your fetch operation: ' + error.message);
+                console.log('There has been a problem with your fetch operation: ' + error);
+                dispatch(errorRequestComic(error));
             });
     };
 }
@@ -66,6 +77,14 @@ export const receiveComic = (comic) => {
         loadingComic: false
     };
 };
+
+export const errorRequestComic = (errorStatus) => {
+    return {
+        type: ERROR_REQUEST_COMIC,
+        hasErrorLoadingComic: true,
+        errorStatus
+    };
+}
 
 export const fetchMoreComics = (oldLimitComics) => {
     const newLimitComics = 20 + oldLimitComics;
