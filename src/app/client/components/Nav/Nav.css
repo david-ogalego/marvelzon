@@ -1,9 +1,10 @@
 .navContainer {
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 50px;
     background-color: grey;
     width: 100%;
+    z-index: 999;
 }
 
 .imageLogo {
