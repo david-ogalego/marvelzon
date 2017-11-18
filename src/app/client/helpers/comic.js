@@ -1,6 +1,6 @@
 
 export function getImageFromComic(comic) {
-    return `${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`;
+    return `${comic.thumbnail.path.replace('http://', 'https://')}/portrait_incredible.${comic.thumbnail.extension}`;
 }
 
 export function getDetailImageFromComic (comic) {
