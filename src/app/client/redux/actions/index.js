@@ -1,9 +1,15 @@
-import { RECEIVE_COMICS, RECEIVE_COMIC, REQUEST_COMICS, REQUEST_COMIC, RESET_COMIC } from './actionTypes';
+import {
+    RECEIVE_COMICS,
+    RECEIVE_COMIC,
+    REQUEST_COMICS,
+    REQUEST_COMIC,
+    RESET_COMIC
+} from './actionTypes';
 
-export const fetchComics = (params) => {
+export const fetchComics = (limitComics) => {
     return (dispatch, getState) => {
-        dispatch(requestComics);
-        return fetch('https://gateway.marvel.com:443/v1/public/comics?format=comic&orderBy=-onsaleDate&apikey=d86beaee5f52cf5b1205630a7e35b24b')
+        dispatch(requestComics(limitComics));
+        return fetch(`https://gateway.marvel.com:443/v1/public/comics?format=comic&offset=0&limit=${limitComics}&orderBy=-onsaleDate&apikey=d86beaee5f52cf5b1205630a7e35b24b`)
             .then(response => response.json())
             .then(json => dispatch(receiveComics(json.data.results)))
             .catch(function(error) {
@@ -18,10 +24,11 @@ export const resetComic = () => {
     };
 };
 
-export const requestComics = () => {
+export const requestComics = (limitComics) => {
     return {
         type: REQUEST_COMICS,
-        loadingCatalog: true
+        loadingCatalog: true,
+        limitComics
     };
 };
 
@@ -59,3 +66,10 @@ export const receiveComic = (comic) => {
         loadingComic: false
     };
 };
+
+export const fetchMoreComics = (oldLimitComics) => {
+    const newLimitComics = 20 + oldLimitComics;
+    return (dispatch, getState) => {
+        dispatch(fetchComics(newLimitComics));
+    };
+}

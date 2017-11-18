@@ -5,7 +5,8 @@ export default function catalogReducer(state = initialState, action) {
     switch(action.type) {
         case types.REQUEST_COMICS:
             return Object.assign({}, state, {
-                loadingCatalog: action.loadingCatalog
+                loadingCatalog: action.loadingCatalog,
+                limitComics: action.limitComics || initialState.limitComics
             });
         case types.RECEIVE_COMICS:
             return Object.assign({}, state, {
