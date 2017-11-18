@@ -14,18 +14,26 @@ class App extends Component {
 			<Provider store={store} >
 				<BrowserRouter>
 					<Switch>
-						<Route exact path='/' render={() =>
-							<div>
-								<NavContainer />
-								<Catalog />
-							</div>
+						<Route exact path='/' render={() => {
+							window.scrollTo(0, 0);
+							return (
+								<div>
+									<NavContainer />
+									<Catalog />
+								</div>
+							);
+						}
 						}>
 						</Route>
-						<Route path='/detail/:comicId' render={(props) =>
-							<div>
-								<NavContainer />
-								<ComicDetailContainer match={props.match}></ComicDetailContainer>
-							</div>
+						<Route path='/detail/:comicId' render={(props) => {
+							window.scrollTo(0, 0);
+							return (
+								<div>
+									<NavContainer />
+									<ComicDetailContainer match={props.match}></ComicDetailContainer>
+								</div>
+							);
+						}
 						}></Route>
 					</Switch>
 				</BrowserRouter>
