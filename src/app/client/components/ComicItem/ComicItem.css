@@ -9,6 +9,12 @@
     margin-bottom: 250px;
 }
 
+.containerImage:hover .image,
+.containerImage:focus .image {
+    transform: translateY(120px);
+    transition: 1s ease-in-out;
+}
+
 .containerDetails {
     background-color: #423838;
     color: white;
@@ -24,7 +30,7 @@
 }
 
 .titleDetail {
-    max-height: 54px;
+    max-height: 57px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -33,10 +39,7 @@
     animation: jump 2s;
 }
 
-.image:hover {
-    transform: translateY(120px);
-    transition: 1s ease-in-out;
-}
+
 
 @keyframes jump {
     0% {
