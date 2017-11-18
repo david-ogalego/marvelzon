@@ -45,3 +45,14 @@
         opacity: 0;
     }
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .container {
+        flex-direction: column;
+    }
+    .containerLists {
+        flex-direction: column;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
