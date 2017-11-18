@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchComics, resetComic, fetchMoreComics } from '../../redux/actions';
 import { ComicList } from '../../components';
-import catalogStyles from './Catalog.css';
 
 class CatalogList extends Component {
     componentDidMount() {

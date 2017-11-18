@@ -1,0 +1,12 @@
+.navContainer {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    background-color: grey;
+    width: 100%;
+}
+
+.imageLogo {
+    height: 40px;
+    margin: 5px 5px 5px 15px;
+}

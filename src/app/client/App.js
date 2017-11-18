@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Provider} from 'react-redux';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import { Catalog, ComicDetailContainer } from './containers/';
+import { Catalog, ComicDetailContainer, NavContainer } from './containers/';
 import configureStore from './redux/store/configureStore';
 import stylesApp from './App.css';
 
@@ -15,10 +15,18 @@ class App extends Component {
 				<BrowserRouter>
 					<Switch>
 						<Route exact path='/' render={() =>
-							<Catalog />
+							<div>
+								<NavContainer />
+								<Catalog />
+							</div>
 						}>
 						</Route>
-						<Route path='/detail/:comicId' component={ComicDetailContainer}></Route>
+						<Route path='/detail/:comicId' render={(props) =>
+							<div>
+								<NavContainer />
+								<ComicDetailContainer match={props.match}></ComicDetailContainer>
+							</div>
+						}></Route>
 					</Switch>
 				</BrowserRouter>
 			</Provider>
