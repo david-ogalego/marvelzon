@@ -8,8 +8,7 @@ const CreatorsList = function(props) {
             <ul>
                 {props.creators.map((creator, index) => 
                     <li key={index}>
-                        <span>Name: {creator.name}</span>
-                        <span>Role: {creator.role}</span>
+                        <span>{creator.name} - {creator.role}</span>
                     </li>
                 )
             }
