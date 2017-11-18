@@ -3,6 +3,10 @@ export function getImageFromComic(comic) {
     return `${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`;
 }
 
+export function getDetailImageFromComic (comic) {
+    return `${comic.thumbnail.path}.${comic.thumbnail.extension}`;
+}
+
 export function getDateFromComic(comic) {
     const onSaleDateType = comic.dates.find((date) => {
         return date.type === 'onsaleDate';
@@ -27,4 +31,15 @@ export function getCharactersFromComic(comic) {
 
 export function getPageCountFromComic(comic) {
     return comic.pageCount;
+}
+
+export function getDescriptionFromComic(comic) {
+    return comic.description;
+}
+
+export function getUrlFromComic(comic) {
+    const urlDetail = comic.urls.find((url) => {
+        return url.type === 'detail';
+    });
+    return urlDetail ? urlDetail.url : '';
 }

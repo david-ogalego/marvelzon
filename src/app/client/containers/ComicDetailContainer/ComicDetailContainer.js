@@ -4,12 +4,14 @@ import { bindActionCreators } from 'redux';
 import { fetchComic } from '../../redux/actions';
 import { ComicDetail, CreatorsList, CharactersList } from '../../components';
 import {
-    getImageFromComic,
+    getDetailImageFromComic,
     getDateFromComic,
     getPriceFromComic,
     getCreatorsFromComic,
     getCharactersFromComic,
-    getPageCountFromComic
+    getPageCountFromComic,
+    getDescriptionFromComic,
+    getUrlFromComic
 } from '../../helpers/comic';
 import styleComicDetail from './ComicDetailContainer.css';
 
@@ -31,16 +33,22 @@ class Comic extends Component {
         return (
             loadingComic ? 
             <div className={styleComicDetail.spinner}></div> :
-            <div>
-                {comic && <ComicDetail
-                    title={comic.title}
-                    date={getDateFromComic(comic)}
-                    price={getPriceFromComic(comic)}
-                    image={getImageFromComic(comic)}
-                    pageCount={getPageCountFromComic(comic)}
-                />}
-                {hasCreators && <CreatorsList creators={creators} />}
-                {hasCharacters && <CharactersList characters={characters} />}
+            <div className={styleComicDetail.container}>
+                <div className={styleComicDetail.containerDetail}>
+                    {comic && <ComicDetail
+                        title={comic.title}
+                        date={getDateFromComic(comic)}
+                        price={getPriceFromComic(comic)}
+                        image={getDetailImageFromComic(comic)}
+                        pageCount={getPageCountFromComic(comic)}
+                        description={getDescriptionFromComic(comic)}
+                        url={getUrlFromComic(comic)}
+                    />}
+                </div>
+                <div className={styleComicDetail.containerLists}>
+                    {hasCreators && <CreatorsList creators={creators} />}
+                    {hasCharacters && <CharactersList characters={characters} />}
+                </div>
             </div>
         );
     }

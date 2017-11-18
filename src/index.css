@@ -1,6 +1,12 @@
 html {
     background-color: #585858;
 }
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
 
 body { 
     margin: 0 auto;

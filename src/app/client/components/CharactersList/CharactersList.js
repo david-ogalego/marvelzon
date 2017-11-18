@@ -3,12 +3,12 @@ import stylesCharactersList from './CharactersList.css';
 
 const CharactersList = function(props) {
     return (
-        <div className={stylesCharactersList.characterList}>
+        <div className={stylesCharactersList.charactersList}>
             <h3>Characters</h3>
             <ul>
                 {props.characters.map((character, index) => 
                     <li key={index}>
-                        Name: {character.name}
+                        {character.name}
                     </li>
                 )
             }

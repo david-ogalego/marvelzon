@@ -1,5 +1,19 @@
 .containerComicDetail {
-    margin: 2%;
-    width: 47%;
     float: left;
+    margin: 50px 30px 20px 30px;
+}
+
+.imageContainer {
+    min-width: 550px;
+}
+
+.containerBasicDetail {
+    display: flex;
+    flex-direction: row;
+}
+
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
 }
