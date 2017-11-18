@@ -18,7 +18,7 @@
 .containerDetails {
     background-color: #423838;
     color: white;
-    padding: 20px 10px 70px 10px;
+    padding: 10px 10px 70px 10px;
     position: absolute;
     top: 0;
     width: 196px;
@@ -27,6 +27,7 @@
 
 .detail {
     text-align: center;
+    padding-bottom: 5px;
 }
 
 .titleDetail {

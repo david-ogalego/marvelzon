@@ -11,7 +11,7 @@ const ComicItem = function(props) {
                 <img className={stylesComicItem.image} alt={props.title} src={props.image} /> 
                 <div className={stylesComicItem.containerDetails}>
                     <div className={`${stylesComicItem.detail} ${stylesComicItem.titleDetail}`}>{props.title}</div>
-                    <div className={stylesComicItem.detail}>Date: {dateComic}</div>
+                    <div className={stylesComicItem.detail}>{dateComic}</div>
                     <div className={stylesComicItem.detail}>Price: {props.price}</div>
                 </div>
             </div>
