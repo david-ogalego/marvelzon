@@ -3,7 +3,7 @@ import { RECEIVE_COMICS, RECEIVE_COMIC, REQUEST_COMICS, REQUEST_COMIC, RESET_COM
 export const fetchComics = (params) => {
     return (dispatch, getState) => {
         dispatch(requestComics);
-        return fetch('https://gateway.marvel.com:443/v1/public/comics?format=comic&orderBy=onsaleDate&apikey=d86beaee5f52cf5b1205630a7e35b24b')
+        return fetch('https://gateway.marvel.com:443/v1/public/comics?format=comic&orderBy=-onsaleDate&apikey=d86beaee5f52cf5b1205630a7e35b24b')
             .then(response => response.json())
             .then(json => dispatch(receiveComics(json.data.results)))
             .catch(function(error) {
