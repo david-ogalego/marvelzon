@@ -24,3 +24,7 @@ export function getCreatorsFromComic(comic) {
 export function getCharactersFromComic(comic) {
     return comic.characters.items;
 }
+
+export function getPageCountFromComic(comic) {
+    return comic.pageCount;
+}

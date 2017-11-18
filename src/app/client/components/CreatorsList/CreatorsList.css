@@ -1,0 +1,9 @@
+li {
+    list-style: none;
+}
+
+.creatorsList {
+    float: left;
+    margin-top: 100px;
+    width: 47%;
+}

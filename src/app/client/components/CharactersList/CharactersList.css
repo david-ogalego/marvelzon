@@ -1,0 +1,9 @@
+li {
+    list-style: none;
+}
+
+.charactersList {
+    float: left;
+    margin-top: 100px;
+    width: 47%;
+}

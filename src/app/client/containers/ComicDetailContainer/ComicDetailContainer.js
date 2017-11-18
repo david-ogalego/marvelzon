@@ -8,7 +8,8 @@ import {
     getDateFromComic,
     getPriceFromComic,
     getCreatorsFromComic,
-    getCharactersFromComic
+    getCharactersFromComic,
+    getPageCountFromComic
 } from '../../helpers/comic';
 import styleComicDetail from './ComicDetailContainer.css';
 
@@ -23,9 +24,9 @@ class Comic extends Component {
             loadingComic
         } = this.props;
         const creators = getCreatorsFromComic(comic);
-        const hasCreators = creators.length;
+        const hasCreators = !!creators.length;
         const characters = getCharactersFromComic(comic);
-        const hasCharacters = characters.length;
+        const hasCharacters = !!characters.length;
 
         return (
             loadingComic ? 
@@ -36,6 +37,7 @@ class Comic extends Component {
                     date={getDateFromComic(comic)}
                     price={getPriceFromComic(comic)}
                     image={getImageFromComic(comic)}
+                    pageCount={getPageCountFromComic(comic)}
                 />}
                 {hasCreators && <CreatorsList creators={creators} />}
                 {hasCharacters && <CharactersList characters={characters} />}
