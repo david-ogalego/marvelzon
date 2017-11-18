@@ -36,7 +36,7 @@ class Comic extends Component {
                     image={getImageFromComic(comic)}
                 />}
                 {hasCreators && <CreatorsList creators={creators} />}
-                {hasCharacters && <CreatorsList creators={creators} />}
+                {hasCharacters && <CharactersList characters={characters} />}
             </div>
         );
     }
