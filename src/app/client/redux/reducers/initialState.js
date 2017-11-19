@@ -15,6 +15,7 @@ export default {
             path: ''
         }
     },
+    offsetComics: 0,
     limitComics: 20
 };
   

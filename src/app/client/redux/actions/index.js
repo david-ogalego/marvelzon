@@ -7,10 +7,10 @@ import {
     ERROR_REQUEST_COMIC
 } from './actionTypes';
 
-export const fetchComics = (limitComics) => {
+export const fetchComics = (limitComics, offsetComics) => {
     return (dispatch, getState) => {
-        dispatch(requestComics(limitComics));
-        return fetch(`https://gateway.marvel.com:443/v1/public/comics?format=comic&offset=0&limit=${limitComics}&orderBy=-onsaleDate&apikey=d86beaee5f52cf5b1205630a7e35b24b`)
+        dispatch(requestComics(limitComics, offsetComics));
+        return fetch(`https://gateway.marvel.com:443/v1/public/comics?format=comic&offset=${offsetComics}&limit=${limitComics}&orderBy=-onsaleDate&apikey=d86beaee5f52cf5b1205630a7e35b24b`)
             .then(response => response.json())
             .then(json => {
                 if (json.code === 200) {
@@ -30,11 +30,12 @@ export const resetComic = () => {
     };
 };
 
-export const requestComics = (limitComics) => {
+export const requestComics = (limitComics, offsetComics) => {
     return {
         type: REQUEST_COMICS,
         loadingCatalog: true,
-        limitComics
+        limitComics,
+        offsetComics
     };
 };
 
@@ -86,9 +87,10 @@ export const errorRequestComic = (errorStatus) => {
     };
 }
 
-export const fetchMoreComics = (oldLimitComics) => {
-    const newLimitComics = 20 + oldLimitComics;
+export const fetchMoreComics = (oldLimitComics, oldOffsetComics) => {
+    const newLimitComics = oldLimitComics;
+    const newOffsetComics = 20 + oldOffsetComics;
     return (dispatch, getState) => {
-        dispatch(fetchComics(newLimitComics));
+        dispatch(fetchComics(newLimitComics, newOffsetComics));
     };
 }

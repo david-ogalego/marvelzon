@@ -6,13 +6,13 @@ import { ComicList } from '../../components';
 
 class CatalogList extends Component {
     componentDidMount() {
-        const { dispatch, limitComics } = this.props;
+        const { dispatch, limitComics, offsetComics } = this.props;
         dispatch(resetComic());
-        dispatch(fetchComics(limitComics));
+        dispatch(fetchComics(limitComics, offsetComics));
     }
     onLoadMore() {
-        const { dispatch, limitComics } = this.props;
-        dispatch(fetchMoreComics(limitComics));
+        const { dispatch, limitComics, offsetComics } = this.props;
+        dispatch(fetchMoreComics(limitComics, offsetComics));
     }
     render() {
         const { 
@@ -29,6 +29,7 @@ class CatalogList extends Component {
 const mapStateToProps = state => {
     return {
         limitComics: state.catalogReducer.limitComics,
+        offsetComics: state.catalogReducer.offsetComics,
         comicsList: state.catalogReducer.comics,
         loadingCatalog: state.catalogReducer.loadingCatalog,
     };
