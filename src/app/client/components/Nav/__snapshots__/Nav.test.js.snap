@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Nav rendered 1`] = `
+<div
+  className="navContainer"
+>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    <img
+      alt="Marvelzon"
+      className="imageLogo"
+      src="test-file-stub"
+    />
+  </a>
+</div>
+`;
