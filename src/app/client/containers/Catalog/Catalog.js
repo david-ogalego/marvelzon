@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchComics, resetComic } from '../../redux/actions';
+import { fetchComics, resetComic, fetchMoreComics } from '../../redux/actions';
 import { ComicList } from '../../components';
 
 class CatalogList extends Component {
     componentDidMount() {
-        const { dispatch } = this.props;
+        const { dispatch, limitComics, offsetComics } = this.props;
         dispatch(resetComic());
-        dispatch(fetchComics());
+        dispatch(fetchComics(limitComics, offsetComics));
+    }
+    onLoadMore() {
+        const { dispatch, limitComics, offsetComics } = this.props;
+        dispatch(fetchMoreComics(limitComics, offsetComics));
     }
     render() {
         const { 
@@ -17,14 +21,15 @@ class CatalogList extends Component {
         } = this.props;
 
         return (
-            loadingCatalog ? 'Loading' : 
-            <ComicList comicsList={comicsList} />
+            <ComicList showLoading={loadingCatalog} comicsList={comicsList} onLoadMore={() => this.onLoadMore()}/>
         );
     }
 }
 
 const mapStateToProps = state => {
     return {
+        limitComics: state.catalogReducer.limitComics,
+        offsetComics: state.catalogReducer.offsetComics,
         comicsList: state.catalogReducer.comics,
         loadingCatalog: state.catalogReducer.loadingCatalog,
     };

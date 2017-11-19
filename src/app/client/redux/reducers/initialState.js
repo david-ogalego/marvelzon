@@ -14,6 +14,8 @@ export default {
         thumbnail: {
             path: ''
         }
-    }
+    },
+    offsetComics: 0,
+    limitComics: 20
 };
   

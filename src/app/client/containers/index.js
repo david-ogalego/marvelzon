@@ -1,4 +1,5 @@
 import Catalog from './Catalog/Catalog';
-import ComicDetail from './ComicDetail/ComicDetail';
+import ComicDetailContainer from './ComicDetailContainer/ComicDetailContainer';
+import NavContainer from './NavContainer/NavContainer';
 
-export { Catalog, ComicDetail };
+export { Catalog, ComicDetailContainer, NavContainer };

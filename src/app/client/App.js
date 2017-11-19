@@ -1,23 +1,40 @@
 import React, { Component } from 'react';
 import {Provider} from 'react-redux';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import { Catalog, ComicDetail } from './containers/';
+import { Catalog, ComicDetailContainer, NavContainer } from './containers/';
 import configureStore from './redux/store/configureStore';
+import stylesApp from './App.css';
 
 const store = configureStore();
 
 class App extends Component {
   render() {
     return (
-		<div className="App">
+		<div className={stylesApp.app}>
 			<Provider store={store} >
 				<BrowserRouter>
 					<Switch>
-						<Route exact path='/' render={() =>
-							<Catalog />
+						<Route exact path='/' render={() => {
+							window.scrollTo(0, 0);
+							return (
+								<div>
+									<NavContainer />
+									<Catalog />
+								</div>
+							);
+						}
 						}>
 						</Route>
-						<Route path='/detail/:comicId' component={ComicDetail}></Route>
+						<Route path='/detail/:comicId' render={(props) => {
+							window.scrollTo(0, 0);
+							return (
+								<div>
+									<NavContainer />
+									<ComicDetailContainer match={props.match}></ComicDetailContainer>
+								</div>
+							);
+						}
+						}></Route>
 					</Switch>
 				</BrowserRouter>
 			</Provider>

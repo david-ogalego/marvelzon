@@ -1,14 +1,14 @@
 import React from 'react';
+import stylesCharactersList from './CharactersList.css';
 
 const CharactersList = function(props) {
     return (
-        <div className="characterList">
+        <div className={stylesCharactersList.charactersList}>
             <h3>Characters</h3>
             <ul>
-                {props.characters.map((character) => 
-                    <li>
-                        Name: {character.name}
-                        Description: {character.description}
+                {props.characters.map((character, index) => 
+                    <li key={index}>
+                        {character.name}
                     </li>
                 )
             }
