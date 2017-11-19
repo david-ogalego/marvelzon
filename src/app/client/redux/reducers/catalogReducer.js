@@ -11,8 +11,18 @@ export default function catalogReducer(state = initialState, action) {
             });
         case types.RECEIVE_COMICS:
             return Object.assign({}, state, {
+                comics: action.comics,
+                loadingCatalog: action.loadingCatalog
+            });
+        case types.RECEIVE_MORE_COMICS:
+            return Object.assign({}, state, {
                 comics: state.comics.concat(action.comics),
                 loadingCatalog: action.loadingCatalog
+            });
+        case types.RESET_COMIC_LIST:
+            return Object.assign({}, state, {
+                limitComics: initialState.limitComics,
+                offsetComics: initialState.offsetComics,
             });
         default:
             return state;

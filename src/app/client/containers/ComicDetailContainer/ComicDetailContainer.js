@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchComic } from '../../redux/actions';
+import { fetchComic, resetComicList } from '../../redux/actions';
 import { ComicDetail, CreatorsList, CharactersList } from '../../components';
 import {
     getDetailImageFromComic,
@@ -18,6 +18,7 @@ import styleComicDetail from './ComicDetailContainer.css';
 class Comic extends Component {
     componentDidMount() {
         const { dispatch, match } = this.props;
+        dispatch(resetComicList());
         dispatch(fetchComic(match.params.comicId));
     }
     render() {
