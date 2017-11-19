@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot ComicDetail rendered with comic 1`] = `
+exports[`Snapshot ComicItem rendered with comic 1`] = `
 <a
   className="item"
   href="/detail/0"
@@ -38,7 +38,7 @@ exports[`Snapshot ComicDetail rendered with comic 1`] = `
 </a>
 `;
 
-exports[`Snapshot ComicDetail rendered with comic and without price 1`] = `
+exports[`Snapshot ComicItem rendered with comic and without price 1`] = `
 <a
   className="item"
   href="/detail/0"

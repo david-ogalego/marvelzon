@@ -4,8 +4,8 @@ import { MemoryRouter } from 'react-router-dom';
 import ComicItem from './ComicItem';
 import MarvelLogo from '../../images/MarvelLogo.png';
 
-test('Snapshot ComicDetail rendered with comic', () => {
-    const treeComicDetail = renderer.create(
+test('Snapshot ComicItem rendered with comic', () => {
+    const treeComicItem = renderer.create(
         <MemoryRouter>
             <ComicItem
                 id={0}
@@ -18,11 +18,11 @@ test('Snapshot ComicDetail rendered with comic', () => {
                 url={'http://marvel.com/comics/issue/2088/official_handbook_of_the_marvel_universe_2004_14_fantastic_four/fantastic_four?utm_campaign=apiRef&utm_source=d86beaee5f52cf5b1205630a7e35b24b'} />
         </MemoryRouter>        
         ).toJSON();
-    expect(treeComicDetail).toMatchSnapshot();
+    expect(treeComicItem).toMatchSnapshot();
 });
 
-test('Snapshot ComicDetail rendered with comic and without price', () => {
-    const treeComicDetail = renderer.create(
+test('Snapshot ComicItem rendered with comic and without price', () => {
+    const treeComicItem = renderer.create(
         <MemoryRouter>
             <ComicItem
                 id={0}
@@ -35,5 +35,5 @@ test('Snapshot ComicDetail rendered with comic and without price', () => {
                 url={'http://marvel.com/comics/issue/2088/official_handbook_of_the_marvel_universe_2004_14_fantastic_four/fantastic_four?utm_campaign=apiRef&utm_source=d86beaee5f52cf5b1205630a7e35b24b'} />
         </MemoryRouter>        
         ).toJSON();
-    expect(treeComicDetail).toMatchSnapshot();
+    expect(treeComicItem).toMatchSnapshot();
 });
