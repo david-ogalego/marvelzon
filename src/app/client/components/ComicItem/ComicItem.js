@@ -5,7 +5,7 @@ import stylesComicItem from './ComicItem.css';
 
 const ComicItem = function(props) {
     return (
-        <Link className={stylesComicItem.item} key={props.videoId} to={`/detail/${props.id}`} >
+        <Link className={stylesComicItem.item} key={props.id} to={`/detail/${props.id}`} >
             <div className={stylesComicItem.containerImage} >
                 <img className={stylesComicItem.image} alt={props.title} src={props.image} /> 
                 <div className={stylesComicItem.containerDetails}>
