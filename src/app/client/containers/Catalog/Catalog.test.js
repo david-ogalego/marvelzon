@@ -3,7 +3,6 @@ import {Provider} from 'react-redux';
 import { mount } from 'enzyme';
 import Catalog from './Catalog';
 import { createMockStore } from 'redux-test-utils';
-import shallowWithStore from '../../helpers/shallowWithStore';
 import { RESET_COMIC, REQUEST_COMICS } from '../../redux/actions/actionTypes';
 
 test('Catalog dispatch actions', () => {
