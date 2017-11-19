@@ -2,7 +2,7 @@
 
 exports[`Snapshot CharactersList rendered empty 1`] = `
 <div
-  className={undefined}
+  className="charactersList"
 >
   <h3>
     Characters
@@ -13,7 +13,7 @@ exports[`Snapshot CharactersList rendered empty 1`] = `
 
 exports[`Snapshot CharactersList rendered with characters 1`] = `
 <div
-  className={undefined}
+  className="charactersList"
 >
   <h3>
     Characters
