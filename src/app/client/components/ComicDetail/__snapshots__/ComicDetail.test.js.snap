@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot ComicDetail rendered with comic 1`] = `
+<div
+  className="containerComicDetail"
+>
+  <h1>
+    X-Men
+  </h1>
+  <div
+    className="containerBasicDetail"
+  >
+    <div
+      className="imageContainer"
+    >
+      <img
+        alt="X-Men"
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      <label>
+        Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+      </label>
+      <label>
+        Date: 
+        2029-12-31
+      </label>
+      <label>
+        Price: 
+        200
+      </label>
+      <label>
+        Number pages: 
+        10
+      </label>
+      <a
+        href="http://marvel.com/comics/issue/2088/official_handbook_of_the_marvel_universe_2004_14_fantastic_four/fantastic_four?utm_campaign=apiRef&utm_source=d86beaee5f52cf5b1205630a7e35b24b"
+        target="_blank"
+      >
+        Detail
+      </a>
+    </div>
+  </div>
+</div>
+`;
