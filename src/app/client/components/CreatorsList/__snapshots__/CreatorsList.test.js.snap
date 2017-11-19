@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot CreatorsList rendered empty 1`] = `
+<div
+  className={undefined}
+>
+  <h3>
+    Creators
+  </h3>
+  <ul />
+</div>
+`;
+
+exports[`Snapshot CreatorsList rendered with creators 1`] = `
+<div
+  className={undefined}
+>
+  <h3>
+    Creators
+  </h3>
+  <ul>
+    <li>
+      <span>
+        David
+         - 
+        writer
+      </span>
+    </li>
+    <li>
+      <span>
+        Pepe
+         - 
+        penciller (cover)
+      </span>
+    </li>
+  </ul>
+</div>
+`;
