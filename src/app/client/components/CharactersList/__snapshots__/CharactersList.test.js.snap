@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot CharactersList rendered empty 1`] = `
+<div
+  className={undefined}
+>
+  <h3>
+    Characters
+  </h3>
+  <ul />
+</div>
+`;
+
+exports[`Snapshot CharactersList rendered with characters 1`] = `
+<div
+  className={undefined}
+>
+  <h3>
+    Characters
+  </h3>
+  <ul>
+    <li>
+      David
+    </li>
+    <li>
+      Pepe
+    </li>
+  </ul>
+</div>
+`;
