@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot ComicList rendered loading 1`] = `
+<div>
+  <div
+    className="spinner"
+  />
+</div>
+`;
+
+exports[`Snapshot ComicList rendered with comic list 1`] = `
+<div>
+  <div
+    className="spinner"
+  />
+  <div
+    className="list"
+  >
+    <a
+      className="item"
+      href="/detail/0"
+      onClick={[Function]}
+    >
+      <div
+        className="containerImage"
+      >
+        <img
+          alt="X-Men"
+          className="image"
+          src="https://i.annihil.us/u/prod/marvel/i/mg/9/90/4bc6353e5fc56/portrait_incredible.jpg"
+        />
+        <div
+          className="containerDetails"
+        >
+          <div
+            className="detail titleDetail"
+          >
+            X-Men
+          </div>
+          <div
+            className="detail"
+          >
+            2029-12-31
+          </div>
+          <div
+            className="detail"
+          >
+            Price: 
+            3.99
+          </div>
+        </div>
+      </div>
+    </a>
+    <a
+      className="item"
+      href="/detail/1"
+      onClick={[Function]}
+    >
+      <div
+        className="containerImage"
+      >
+        <img
+          alt="X-Men-2"
+          className="image"
+          src="https://i.annihil.us/u/prod/marvel/i/mg/9/90/4bcsjnfsnf/portrait_incredible.jpg"
+        />
+        <div
+          className="containerDetails"
+        >
+          <div
+            className="detail titleDetail"
+          >
+            X-Men-2
+          </div>
+          <div
+            className="detail"
+          >
+            2018-12-31
+          </div>
+          <div
+            className="detail"
+          >
+            Price: 
+            100
+          </div>
+        </div>
+      </div>
+    </a>
+    <div
+      className="containerLoadMore"
+      onClick={[Function]}
+    >
+      <img
+        alt="Load more"
+        className="loadMore"
+        src="test-file-stub"
+      />
+    </div>
+  </div>
+</div>
+`;
