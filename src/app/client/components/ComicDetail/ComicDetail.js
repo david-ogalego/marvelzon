@@ -13,7 +13,7 @@ const ComicDetail = function(props) {
                 <div className={stylesComicDetail.detailsContainer}>
                     <label>{props.description}</label>
                     <label>Date: {getDateFormated(props.date)}</label>
-                    <label>Price: {props.price}</label>
+                    {!!props.price && <label>Price: {props.price}</label>}
                     <label>Number pages: {props.pageCount}</label>
                     <a href={props.url} target="_blank" >Detail</a>
                 </div>

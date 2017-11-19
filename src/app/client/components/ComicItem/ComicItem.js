@@ -11,7 +11,7 @@ const ComicItem = function(props) {
                 <div className={stylesComicItem.containerDetails}>
                     <div className={`${stylesComicItem.detail} ${stylesComicItem.titleDetail}`}>{props.title}</div>
                     <div className={stylesComicItem.detail}>{getDateFormated(props.date)}</div>
-                    <div className={stylesComicItem.detail}>Price: {props.price}</div>
+                    {!!props.price && <div className={stylesComicItem.detail}>Price: {props.price}</div>}
                 </div>
             </div>
         </Link>
