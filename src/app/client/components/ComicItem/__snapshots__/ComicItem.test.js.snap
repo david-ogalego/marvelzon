@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot ComicDetail rendered with comic 1`] = `
+<a
+  className="item"
+  href="/detail/0"
+  onClick={[Function]}
+>
+  <div
+    className="containerImage"
+  >
+    <img
+      alt="X-Men"
+      className="image"
+      src="test-file-stub"
+    />
+    <div
+      className="containerDetails"
+    >
+      <div
+        className="detail titleDetail"
+      >
+        X-Men
+      </div>
+      <div
+        className="detail"
+      >
+        2029-12-31
+      </div>
+      <div
+        className="detail"
+      >
+        Price: 
+        200
+      </div>
+    </div>
+  </div>
+</a>
+`;
+
+exports[`Snapshot ComicDetail rendered with comic and without price 1`] = `
+<a
+  className="item"
+  href="/detail/0"
+  onClick={[Function]}
+>
+  <div
+    className="containerImage"
+  >
+    <img
+      alt="X-Men"
+      className="image"
+      src="test-file-stub"
+    />
+    <div
+      className="containerDetails"
+    >
+      <div
+        className="detail titleDetail"
+      >
+        X-Men
+      </div>
+      <div
+        className="detail"
+      >
+        2029-12-31
+      </div>
+    </div>
+  </div>
+</a>
+`;
