@@ -40,9 +40,9 @@ ComicList.propTypes = {
   comicsList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    price: PropTypes.number,
+    images: PropTypes.array.isRequired,
+    dates: PropTypes.array.isRequired,
+    prices: PropTypes.array,
   })),
   onLoadMore: PropTypes.func,
 };

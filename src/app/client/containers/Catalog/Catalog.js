@@ -53,13 +53,8 @@ CatalogList.propTypes = {
   dispatch: PropTypes.func.isRequired,
   limitComics: PropTypes.number,
   offsetComics: PropTypes.number,
-  comicsList: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    price: PropTypes.number,
-  })),
+  // eslint-disable-next-line
+  comicsList: PropTypes.array,
   loadingCatalog: PropTypes.bool,
 };
 

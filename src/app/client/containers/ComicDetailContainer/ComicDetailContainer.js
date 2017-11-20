@@ -85,16 +85,11 @@ Comic.propTypes = {
   dispatch: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      comicId: PropTypes.number,
+      comicId: PropTypes.string,
     }),
   }).isRequired,
-  comic: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    price: PropTypes.number,
-  }),
+  // eslint-disable-next-line
+  comic: PropTypes.object,
   loadingComic: PropTypes.bool,
   hasErrorLoadingComic: PropTypes.bool,
   errorStatus: PropTypes.string,
