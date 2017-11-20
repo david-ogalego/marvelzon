@@ -12,9 +12,14 @@
     width: 100%;
 }
 
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
 .loadMore {
     height: 40px;
-    margin-left: 48%;
     cursor: pointer;
 }
 

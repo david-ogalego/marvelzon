@@ -1,10 +1,10 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import catalogReducer from './catalogReducer';
 import comicReducer from './comicReducer';
 
 const rootReducer = combineReducers({
-    catalogReducer,
-    comicReducer
+  catalogReducer,
+  comicReducer,
 });
 
 export default rootReducer;

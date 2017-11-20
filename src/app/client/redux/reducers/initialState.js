@@ -1,21 +1,21 @@
 export default {
-    loadingCatalog: true,
-    loadingComic: true,
-    comics: [],
-    comic: {
-        characters: {
-            items: []
-        },
-        creators: {
-            items: []
-        },
-        dates: [],
-        prices: [],
-        thumbnail: {
-            path: ''
-        }
+  loadingCatalog: true,
+  loadingComic: true,
+  comics: [],
+  comic: {
+    characters: {
+      items: [],
     },
-    offsetComics: 0,
-    limitComics: 20
+    creators: {
+      items: [],
+    },
+    dates: [],
+    prices: [],
+    thumbnail: {
+      path: '',
+    },
+  },
+  offsetComics: 0,
+  limitComics: 20,
 };
-  
+
