@@ -1,22 +1,23 @@
 import React from 'react';
-import CharactersList from './CharactersList';
 import renderer from 'react-test-renderer';
+import CharactersList from './CharactersList';
 
 const charactersList = [
-    {
-        name: 'David'
-    },
-    {
-        name: 'Pepe'
-    }
+  {
+    name: 'David',
+  },
+  {
+    name: 'Pepe',
+  },
 ];
 
 test('Snapshot CharactersList rendered empty', () => {
-    const treeCharactersListEmpty = renderer.create(<CharactersList characters={[]} />).toJSON();
-    expect(treeCharactersListEmpty).toMatchSnapshot();
+  const treeCharactersListEmpty = renderer.create(<CharactersList characters={[]} />).toJSON();
+  expect(treeCharactersListEmpty).toMatchSnapshot();
 });
 
 test('Snapshot CharactersList rendered with characters', () => {
-    const treeCharactersList = renderer.create(<CharactersList characters={charactersList} />).toJSON();
-    expect(treeCharactersList).toMatchSnapshot();
+  const CharactersListComp = <CharactersList characters={charactersList} />;
+  const treeCharactersList = renderer.create(CharactersListComp).toJSON();
+  expect(treeCharactersList).toMatchSnapshot();
 });
